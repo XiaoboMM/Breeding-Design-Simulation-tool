@@ -15,13 +15,13 @@ source("https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool/blob/maste
 source("https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool/blob/master/source/BC2F2enrichment.R")
 source("https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool/blob/master/source/BC2F2enrichmentDH.R")
 source("https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool/blob/master/source/BC2F2enrichmentRIL.R")
-
-startDesign <- function(P1, selected_pop, qtl_file, pop_file, out_file){
   library(dplyr)
   library(readr)
   library(tidyr)
   library(data.table)
   library(openxlsx)
+
+startDesign <- function(P1, selected_pop, qtl_file, pop_file, out_file){
   F1DH(P1, selected_pop, qtl_file, pop_file)
   F1RIL(P1, selected_pop, qtl_file, pop_file)
   BC1DH(P1, selected_pop, qtl_file, pop_file)
