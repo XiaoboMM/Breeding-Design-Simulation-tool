@@ -1,0 +1,5 @@
+Trait	Target
+FSN	No
+TGW	No
+DST	Yes
+GPC	Yes
