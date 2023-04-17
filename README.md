@@ -6,7 +6,7 @@ DBS tool can help breeders to develop effective strategies for variety developme
 #
 There are three example datasets attached in DBS tool, users can export and view the details by following R code:  
   
-  ##The character format of genotype data to numeric codes of 0, 1 and 2 representing missing, superior alleles and inferior alleles, respectively
+  ##The character format of genotype data to numeric codes of 0, 1 and 2 representing missing, superior alleles and inferior alleles, respectively.  
 selected_pop<- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T)  
   
 qtl_file <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/QTL.txt", header = T, sep = "\t")  
