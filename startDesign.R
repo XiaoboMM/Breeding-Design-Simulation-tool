@@ -21,7 +21,7 @@ library(tidyr)
 library(data.table)
 library(openxlsx)
 
-startDesign <- function(P1, selected_pop, qtl_file, pop_file, out_file){
+startDesign <- function(P1, selected_pop, qtl_file, pop_file){
   F1DH(P1, selected_pop, qtl_file, pop_file)
   F1RIL(P1, selected_pop, qtl_file, pop_file)
   BC1DH(P1, selected_pop, qtl_file, pop_file)
