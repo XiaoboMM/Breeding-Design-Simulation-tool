@@ -48,7 +48,6 @@ startDesign <- function(P1, selected_pop, qtl_file, pop_file){
   for (i in strategy){
     df <- read.csv(paste("Nmin",i, "_population_size.csv", sep = ""), header = T)
     df1 <- select(df, Name, dim(df)[2])
-    df1[2] = ceiling(df1[2])
     names(df1)[2] = i
     df2 <- data.frame(t(df1))
     colnames(df2) = df2[1,]
