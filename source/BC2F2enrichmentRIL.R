@@ -25,10 +25,10 @@ BC2F2enrichmentRIL <- function(P1, selected_pop, qtl_file, pop_file){
   
   ###添加QTL的位置信息
   qtl <- qtl_file%>%
-    select(QTL, Chr, Pos)
+    select(QTL, Chromosome, Genetic_position)
   
   mydata <- merge(data1, qtl, by = "QTL", all.x = T)%>%
-    arrange(Chr, Pos)
+    arrange(Chromosome, Genetic_position)
   
   ######计算NminPBC2F2enrichmentRIL，计算PBC2F2enrichmentRIL最小群体大小
   data_pop_size <- data.frame(stringsAsFactors = F)
@@ -39,12 +39,12 @@ BC2F2enrichmentRIL <- function(P1, selected_pop, qtl_file, pop_file){
     mm <- c()
     nn = 1
     f = 1
-    chr <- unique(p_inf$Chr)
+    chr <- unique(p_inf$Chromosome)
     
     ################################################################
     for (chrom in 1:length(chr)){
       #print(chrom)
-      p_inf_chr <- filter(p_inf, Chr == chr[chrom])####提取每条染色体上的位点信息
+      p_inf_chr <- filter(p_inf, Chromosome == chr[chrom])####提取每条染色体上的位点信息
       if (dim(p_inf_chr)[1] > 1){##染色体上存在两个或两个以上的位点
         for (i in 1:(dim(p_inf_chr)[1]-1)){
           Dis <- as.numeric(p_inf_chr[i+1, 6]-p_inf_chr[i, 6])##两标记间遗传距离

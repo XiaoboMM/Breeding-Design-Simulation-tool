@@ -1,4 +1,4 @@
-BC2DH <- function(P1, selected_pop, qtl_file, pop_file){
+BC1RIL <- function(P1, selected_pop, qtl_file, pop_file){
   df <- pop_file%>%
     select(-Trait)%>%
     select(QTL, P1, everything())%>%
@@ -31,10 +31,10 @@ BC2DH <- function(P1, selected_pop, qtl_file, pop_file){
   mydata <- merge(data1, qtl, by = "QTL", all.x = T)%>%
     arrange(Chromosome, Genetic_position)
   
-  ######计算NminPBC2DH，计算PBC2DH最小群体大小
+  ######计算NminPBC1RIL，计算PBC1RIL最小群体大小
   data_pop_size <- data.frame(stringsAsFactors = F)
   for (trait in (1: dim(dat)[1])){
-    ##############计算PBC2DH最小群体大小
+    ##############计算PBC1RIL最小群体大小
     p_inf <- filter(mydata, Name == dat[trait, 1]) 
     ###按照不同染色体进行分组
     mm <- c()
@@ -50,25 +50,26 @@ BC2DH <- function(P1, selected_pop, qtl_file, pop_file){
         for (i in 1:(dim(p_inf_chr)[1]-1)){
           Dis <- as.numeric(p_inf_chr[i+1, 6]-p_inf_chr[i, 6])##两标记间遗传距离
           r = 1/2*(1-exp(-Dis/50))###重组率
-          if (p_inf_chr[i, 3] == 1){ ##########################P1BC2DH#################
+          R=2*r/(1+2*r)
+          if (p_inf_chr[i, 3] == 1){ ##########################P1BC1RIL#################
             if (p_inf_chr[i, 3] != p_inf_chr[i+1, 3]){
-              ##P1=AAbb, P2 = aaBB, P1BC2DH代不同基因型频率如下
-              ##p(AABB) = 1/8-1/8*(1-r)^3
-              p = 1/8-1/8*(1-r)^3##携带两个目的基因均为纯合概率
+              ##P1=AAbb, P2 = aaBB, P1BC1RIL代不同基因型频率如下
+              ##p(AABB) = 1/4-1/4*(1-r)*(1-R)
+              p = 1/4-1/4*(1-r)*(1-R)##携带两个目的基因均为纯合概率
             } else {
-              ##P1=AABB, P2 = aabb, P1BC2DH代不同基因型频率如下
-              ##p(AABB) = 3/4+1/8*(1-r)^3
-              p = 3/4+1/8*(1-r)^3##携带两个目的基因均为纯合的概率
+              ##P1=AABB, P2 = aabb, P1BC1RIL代不同基因型频率如下
+              ##p(AABB) = 1/2+1/4*(1-r)*(1-R)
+              p = 1/2+1/4*(1-r)*(1-R)##携带两个目的基因均为纯合的概率
             }
-          } else {  ###################P2BC2DH##################
+          } else {  ###################P2BC1RIL##################
             if (p_inf_chr[i, 3] != p_inf_chr[i+1, 3]){
-              ##P1=AAbb, P2 = aaBB, P2BC2DH代不同基因型频率如下
-              ##p(AABB) = 1/8-1/8*(1-r)^3
-              p = 1/8-1/8*(1-r)^3##携带两个目的基因均为纯合概率
+              ##P1=AAbb, P2 = aaBB, P2BC1RIL代不同基因型频率如下
+              ##p(AABB) = 1/4-1/4*(1-r)*(1-R)
+              p = 1/4-1/4*(1-r)*(1-R)##携带两个目的基因均为纯合概率
             } else {
-              ##P1=AABB, P2 = aabb, P2BC2DH代不同基因型频率如下
-              ##p(AABB) = 1/8*(1-r)^3
-              p = 1/8*(1-r)^3##携带两个目的基因均为纯合的概率
+              ##P1=AABB, P2 = aabb, P2BC1RIL代不同基因型频率如下
+              ##p(AABB) = 1/4*(1-r)*(1-R)
+              p = 1/4*(1-r)*(1-R)##携带两个目的基因均为纯合的概率
             }
           }
           mm[nn] = p
@@ -76,10 +77,10 @@ BC2DH <- function(P1, selected_pop, qtl_file, pop_file){
           f = f*p
         }
       } else {##染色体上存在1个位点
-        if (p_inf_chr[1, 3] == 1){ ##########################P1BC2DH#################
-          p = 7/8
-        } else { ##################P2BC2DH#################
-          p = 1/8
+        if (p_inf_chr[1, 3] == 1){ ##########################P1BC1RIL#################
+          p = 3/4
+        } else { ##################P2BC1RIL#################
+          p = 1/4
         }
         mm[nn] = p
         nn = nn + 1
@@ -93,7 +94,7 @@ BC2DH <- function(P1, selected_pop, qtl_file, pop_file){
     data_pop_size[trait, 1] = mat_name
     data_pop_size[trait, 2] = NminF2
   }
-  names(data_pop_size) = c("Name", "NminBC2DH")
-  write.csv(data_pop_size, paste("NminBC2DH", "_population_size.csv", sep = ""), quote = F, row.names = F)
-  
+  names(data_pop_size) = c("Name", "NminBC1RIL")
+  write.csv(data_pop_size, paste("NminBC1RIL", "_population_size.csv", sep = ""), quote = F, row.names = F)
 }
+  

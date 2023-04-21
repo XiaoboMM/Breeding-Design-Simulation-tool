@@ -1,4 +1,4 @@
-F2enrichmentRIL <- function(P1, selected_pop, qtl_file, pop_file){
+BC1F2 <- function(P1, selected_pop, qtl_file, pop_file){
   df <- pop_file%>%
     select(-Trait)%>%
     select(QTL, P1, everything())%>%
@@ -31,57 +31,69 @@ F2enrichmentRIL <- function(P1, selected_pop, qtl_file, pop_file){
   mydata <- merge(data1, qtl, by = "QTL", all.x = T)%>%
     arrange(Chromosome, Genetic_position)
   
-  ######计算NminF2enrichmentRIL，计算F2enrichmentRIL最小群体大小
+  ######计算NminPBC1F2，计算PBC1F2最小群体大小
   data_pop_size <- data.frame(stringsAsFactors = F)
   for (trait in (1: dim(dat)[1])){
-    ##############计算F2enrichmentRIL最小群体大小
+    ##############计算PBC1F2最小群体大小
     p_inf <- filter(mydata, Name == dat[trait, 1]) 
-    
     ###按照不同染色体进行分组
     mm <- c()
     nn = 1
     f = 1
     chr <- unique(p_inf$Chromosome)
+    
+    ################################################################
     for (chrom in 1:length(chr)){
       #print(chrom)
       p_inf_chr <- filter(p_inf, Chromosome == chr[chrom])####提取每条染色体上的位点信息
       if (dim(p_inf_chr)[1] > 1){##染色体上存在两个或两个以上的位点
         for (i in 1:(dim(p_inf_chr)[1]-1)){
           Dis <- as.numeric(p_inf_chr[i+1, 6]-p_inf_chr[i, 6])##两标记间遗传距离
-          
-          if (p_inf_chr[i, 3] != p_inf_chr[i+1, 3]){
-            r = 1/2*(1-exp(-Dis/50))###重组率
-            ##P1=AAbb, P2 = aaBB, F2enrichmentRIL代不同基因型频率如下
-            ##p(AABB) = 1/4*r^2+1/2*1/2*(1-r)+1/2*1/2*(1-r)+(1/2*(1-R))*(1/2*r^2)+(1/2*R)*(1/2*(1-r)^2);R=2*r/(1+2*r)
-            R=2*r/(1+2*r)
-            p1 = 1/4*r^2 + 1/2*(1-r) + 1/2*(1-r) + 1/2*r^2 + 1/2*(1-r)^2
-            p = (1/4*r^2+1/2*1/2*(1-r)+1/2*1/2*(1-r)+(1/2*(1-R))*(1/2*r^2)+(1/2*R)*(1/2*(1-r)^2))/p1##携带两个目的基因均为纯合概率
-          } else {
-            r = 1/2*(1-exp(-Dis/50))###重组率
-            ##P1=AABB, P2 = aabb, F2enrichmentRIL代不同基因型频率如下
-            ##p(AABB) = 1/4*(1-r)^2+1/2*1/2*(1-r)+1/2*1/2*(1-r)+(1/2*(1-R))*1/2*(1-r)^2+(1/2*R)*(1/2*r^2)
-            R=2*r/(1+2*r)
-            p2 = 1/4*(1-r)^2 + 1/2*(1-r) + 1/2*(1-r) + 1/2*(1-r)^2 + 1/2*r^2
-            p = (1/4*(1-r)^2+1/2*1/2*(1-r)+1/2*1/2*(1-r)+(1/2*(1-R))*1/2*(1-r)^2+(1/2*R)*(1/2*r^2))/p2 ##携带两个目的基因均为纯合的概率
+          r = 1/2*(1-exp(-Dis/50))###重组率
+          if (p_inf_chr[i, 3] == 1){ ##########################P1BC1F2#################
+            if (p_inf_chr[i, 3] != p_inf_chr[i+1, 3]){
+              ##P1=AAbb, P2 = aaBB, PBC1F2代不同基因型频率如下
+              ##p(AABB) = 1/4-1/4*(1-r)^2
+              p = 1/4-1/4*(1-r)^2##携带两个目的基因均为纯合概率
+            } else {
+              ##P1=AABB, P2 = aabb, PBC1F2代不同基因型频率如下
+              ##p(AABB) = 1/2+1/4*(1-r)^2
+              p = 1/2+1/4*(1-r)^2##携带两个目的基因均为纯合的概率
+            }
+          } else {  ###################P2BC1F2##################
+            if (p_inf_chr[i, 3] != p_inf_chr[i+1, 3]){
+              ##P1=AAbb, P2 = aaBB, P2BC1F2代不同基因型频率如下
+              ##p(AABB) = 1/4-1/4*(1-r)^2
+              p = 1/4-1/4*(1-r)^2##携带两个目的基因均为纯合概率
+            } else {
+              ##P1=AABB, P2 = aabb, P2BC1F2代不同基因型频率如下
+              ##p(AABB) = 1/4*(1-r)^2
+              p = 1/4*(1-r)^2##携带两个目的基因均为纯合的概率
+            }
           }
           mm[nn] = p
           nn = nn + 1
           f = f*p
         }
       } else {##染色体上存在1个位点
-        p = 2/3
+        if (p_inf_chr[1, 3] == 1){ ##########################P1BC1F2#################
+          p = 3/4
+        } else { ##################P2BC1F2#################
+          p = 1/4
+        }
         mm[nn] = p
         nn = nn + 1
         f = f*p
       }
     }
+    #print(mm)
     ###α = 0.01
     NminF2 <- log(0.01)/log(1-f)
     mat_name = dat[trait, 1]
     data_pop_size[trait, 1] = mat_name
     data_pop_size[trait, 2] = NminF2
   }
-  names(data_pop_size) = c("Name", "NminF2enrichmentRIL")
-  write.csv(data_pop_size, paste("NminF2enrichmentRIL", "_population_size.csv", sep = ""), quote = F, row.names = F)
+  names(data_pop_size) = c("Name", "NminBC1F2")
+  write.csv(data_pop_size, paste("NminBC1F2", "_population_size.csv", sep = ""), quote = F, row.names = F)
   
 }
