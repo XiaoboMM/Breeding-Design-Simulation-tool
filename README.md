@@ -12,7 +12,7 @@ git clone https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool.git
 
 There are three example datasets attached in DBS tool, , users can export and view the details by following R code:
 ```
-#The genotype of the material at the instresting QTL and genes. The character format of genotype data to numeric codes of 0, 1 and 2 representing missing, superior alleles and inferior alleles, respectively.
+#The genotype of the materials at the instresting QTL and genes.
 > pop_file <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
 > pop_file[(1:5), c(1:5)]
   Trait     QTL       Jimai22 Jinan13 04zhong36
@@ -21,6 +21,8 @@ There are three example datasets attached in DBS tool, , users can export and vi
 3   GPC   QGpc.1B.1       2       2         1
 4   FSN   QFsn.1B.1       2       2         2
 5   TGW   QTgw.1B.2       1       1         1
+
+The character format of genotype data to numeric codes of 0, 1 and 2 representing missing, superior alleles and inferior alleles, respectively.
 ```
 
 
