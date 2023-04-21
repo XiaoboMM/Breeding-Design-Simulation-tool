@@ -29,12 +29,13 @@ There are three example datasets attached in DBS tool, , users can export and vi
 ## The detailed information of QTL and genes
 > qtl_file <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
 > head(qtl_file)
-  Trait       QTL   Chr       Pos
-1   FSN QFsn.1B.1 Chr1B 137.00311
-2   FSN QFsn.2A.1 Chr2A 113.29670
-3   FSN QFsn.2B.1 Chr2B  99.79318
-4   FSN QFsn.4A.1 Chr4A  76.79357
-5   FSN QFsn.4A.2 Chr4A 144.37692
-6   FSN QFsn.6A.1 Chr6A  84.11215
+  Trait       QTL Chr    Pos
+1   FSN QFsn.1B.1  1B 667.97
+2   FSN QFsn.2A.1  2A 675.94
+3   FSN QFsn.2B.1  2B 439.23
+4   FSN QFsn.4A.1  4A 616.31
+5   FSN QFsn.4A.2  4A 726.22
+6   FSN QFsn.6A.1  6A 520.88
 
-As the example dataset, the first four columns are names, related-traits, chromosomes, genetic positions of QTL and genes, respectively.
+As the example dataset, the first four columns are names, related-traits, chromosomes, physical positions (Mb) of QTL and genes, respectively.
+```
