@@ -100,3 +100,5 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 </a>
 </p>
 
+Blue, red and gray color represent superior, inferior and missing alleles, respectively.
+
