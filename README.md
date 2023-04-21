@@ -40,3 +40,23 @@ The character format of genotype data to numeric codes of 0, 1 and 2 representin
 
 As the example dataset, the first four columns are names, related-traits, chromosomes, physical positions (Mb) of QTL and genes, respectively.
 ```
+
+
+
+
+
+
+```
+#The general linkage map
+> map <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/general_linkage_map.csv", header = T)
+> head(map)
+  Chromosome Physical_position Genetic_position
+1         1A                 0             0.00
+2         1A                 1             0.94
+3         1A                 2             1.02
+4         1A                 3             1.72
+5         1A                 4             2.30
+6         1A                 5             2.88
+
+As the example dataset, the three columns are chromosomes, physical positions (Mb) and genetic position (cM), respectively.
+```
