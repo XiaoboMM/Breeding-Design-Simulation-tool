@@ -96,7 +96,7 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 **[The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Fig1.jpg)**
 <p align="center">
 <a href="https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Fig1.jpg">
-<img src="data/Fig1.jpg" height="200px" width="480px">
+<img src="data/Fig1.jpg" height="200px" width="600px">
 </a>
 </p>
 
