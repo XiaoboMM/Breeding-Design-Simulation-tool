@@ -160,7 +160,7 @@ parentSelection <- function(P1, genotype_pop, trait_type, percent_all, percent_T
   
   ########Plot heatmap
   data <- selected_P_pop%>%
-    gather(QTL, allele, 3:(dim(selected_P_pop)[2]))
+    gather(QTL, allele, 2:(dim(selected_P_pop)[2]))
   data$allele <- str_replace(data$allele, "2", "Inferior")
   data$allele <- str_replace(data$allele, "1", "Superior")
   data$allele <- str_replace(data$allele, "0", "Missing")
@@ -178,10 +178,3 @@ parentSelection <- function(P1, genotype_pop, trait_type, percent_all, percent_T
   
 
 }
-
-
-
-
-
-
-
