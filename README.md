@@ -60,3 +60,38 @@ As the example dataset, the first four columns are names, related-traits, chromo
 
 As the example dataset, the three columns are chromosomes, physical positions (Mb) and genetic position (cM), respectively.
 ```
+
+
+```
+#Target traits
+> trait_type <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Trait_Type.txt", header = T, sep = "\t")
+> head(trait_type)
+  Trait Target
+1   FSN    Yes
+2   TGW    Yes
+3   DST     No
+4   GPC     No
+
+“Yes“ in the second column, corresponds to the trait to be improved in the first column.
+“No“ in the second column, corresponds to the trait to be maintained in the first column.
+```
+
+## parentSelection
+
+The parent to be improved needs to be provided. For example, P1 = "Nongda179"
+```
+P1 = "Nongda179"
+percent_T1 = 0.1
+percent_T2 = 0.25
+percent_all = 0.45
+parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type, 
+                percent_all = percent_all, percent_T1 = percent_T1, 
+                percent_T2 = percent_T2)
+
+#percent_T1: Potential parental lines in the top percentage (10%) for the number of complementary superior allele QTL compared to "Nongda179" in the first desired trait for improvement (FSN in this example)；
+#percent_T2: The retained potential parental lines in the top percentage (25%) for the number of complementary superior allele QTL compared to "Nongda179" in the second desired trait for improvement (FSN in this example).
+#Note: DBS tool provides up to 6 desired trait.
+#percent_all: The retained potential parental lines in the bottom percentage (45%) for the number of different allele QTL compared to "Nongda179" in all the target traits.
+```
+[The distribution of allelic types](https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool/blob/master/data/Figure1.pdf)
+
