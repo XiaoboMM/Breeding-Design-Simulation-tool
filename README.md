@@ -15,13 +15,12 @@ There are three example datasets attached in DBS tool, , users can export and vi
 #The genotype of the material at the instresting QTL and genes. The character format of genotype data to numeric codes of 0, 1 and 2 representing missing, superior alleles and inferior alleles, respectively.
 > pop_file <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
 > pop_file[(1:5), c(1:5)]
-> pop_file[(1:5), c(1:5)]
-  Trait     QTL       Jimai22 Jinan13 X04zhong36
-1   TGW   QTgw.1B.1       2       2          1
-2   FSN   QFsn.1B.1       2       2          2
-3   TGW   QTgw.1B.2       1       1          1
-4   DST   QDst.1D.1       1       2          2
-5   FSN   QFsn.2A.1       2       1          1
+  Trait     QTL       Jimai22 Jinan13 04zhong36
+1   DST   QDst.1B.1       1       2         2
+2   TGW   QTgw.1B.1       2       2         1
+3   GPC   QGpc.1B.1       2       2         1
+4   FSN   QFsn.1B.1       2       2         2
+5   TGW   QTgw.1B.2       1       1         1
 ```
 
 
