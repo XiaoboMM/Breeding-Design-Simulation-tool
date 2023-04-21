@@ -1,3 +1,4 @@
+
 # Designed-Breeding-Simulation-tool
 **Designed Breeding Simulation (DBS) tool** is developed for the selection of potential parents and breeding strategies, estimation of breeding population size, and achieving the pyramiding of superior alleles.
 
@@ -13,8 +14,8 @@ git clone https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool.git
 There are four example datasets attached in DBS tool, , users can export and view the details by following R code:
 ```
 #The genotype of the materials at the instresting QTL and genes.
-> pop_file <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
-> pop_file[(1:5), c(1:5)]
+> genotype_pop <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
+> genotype_pop[(1:5), c(1:5)]
   Trait     QTL       Jimai22 Jinan13 04zhong36
 1   DST   QDst.1B.1       1       2         2
 2   TGW   QTgw.1B.1       2       2         1
@@ -80,6 +81,7 @@ As the example dataset, the three columns are chromosomes, physical positions (M
 
 The parent to be improved needs to be provided. For example, P1 = "Nongda179"
 ```
+source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/parentSelection.R")
 P1 = "Nongda179"
 percent_T1 = 0.1
 percent_T2 = 0.25
@@ -102,3 +104,11 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 
 Blue, red and gray color represent superior, inferior and missing alleles, respectively.
 
+
+## startDesign
+```
+source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/startDesign.R")
+selected_pop <- read.table("selected_pop.txt", header = T, sep = "\t")
+startDesign(P1, selected_pop, qtl_file, pop_file)
+#File "selected_pop.txt" is the result file of the parentSelection step.
+```
