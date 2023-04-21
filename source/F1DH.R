@@ -74,7 +74,12 @@ F1DH <- function(P1, selected_pop, qtl_file, pop_file){
     }
     #print(mm)
     ###α = 0.01
-    NminF2 <- log(0.01)/log(1-f)
+    if (f == 0){
+      NminF2 = "∞"
+    } else {
+      NminF2 <- ceiling(log(0.01)/log(1-f))
+    }
+    
     mat_name = dat[trait, 1]
     data_pop_size[trait, 1] = mat_name
     data_pop_size[trait, 2] = NminF2
