@@ -110,5 +110,30 @@ Blue, red and gray color represent superior, inferior and missing alleles, respe
 source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/startDesign.R")
 selected_pop <- read.table("selected_pop.txt", header = T, sep = "\t")
 startDesign(P1, selected_pop, qtl_file, pop_file)
-#File "selected_pop.txt" is the result file of the parentSelection step.
+
+#Note: File "selected_pop.txt" is the result file of the parentSelection step.
 ```
+|Strategy|Pingan6|Longmai212|Lankao926|CHD5O3|Luzi238
+|--|--|--|--|--|--|
+|F1DH|637|1029|222194|559814|∞
+|F1RIL|593|1270|111314|217536|∞
+|BC1DH|4992|25633|2713146|1730278|∞
+|BC1RIL|5298|31616|1964644|1088109|∞
+|BC2DH|66245|1053890|95848590|26279757|∞
+|BC2RIL|73638|1299850|80066289|19812623|∞
+|F2|88716|230714|10720802510|68052587701|∞
+|BC1F2|4992|25633|2713146|1730278|∞
+|F2enrichment|4|11|10|3|51
+|F2enrichmentDH|66|127|462|917|1601
+|F2enrichmentRIL|66|131|460|882|1616
+|BC1F2enrichment|200|1912|2861|1903|10456
+|BC1F2enrichmentDH|45|70|1972|1655|∞
+|BC1F2enrichmentRIL|46|74|1650|1351|∞
+|BC2F2enrichment|6174|93269|338097|264419|676480
+|BC2F2enrichmentDH|38|59|1218|650|∞
+|BC2F2enrichmentRIL|38|62|1060|553|∞
+
+The minimum population size required to obtain the desired genotypes of offspring individuals from “Nongda179” , and its five candidate hybrid parents under different breeding strategies (α = 0.01).
+#Note: "∞" represents the inability to obtain ideal genotype plant individuals the impossibility of obtaining individuals with the desired genotype.
+
+
