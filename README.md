@@ -4,7 +4,7 @@
 
 ## Installation
 
-**DBS tools**  can be installed with the following R code:
+**DBS tool**  can be installed with the following R code:
 ```
 git clone https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool.git
 ```
