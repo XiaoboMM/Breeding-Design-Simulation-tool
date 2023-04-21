@@ -93,5 +93,5 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 #Note: DBS tool provides up to 6 desired trait.
 #percent_all: The retained potential parental lines in the bottom percentage (45%) for the number of different allele QTL compared to "Nongda179" in all the target traits.
 ```
-**![The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Figure1.pdf)**
+![The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Figure1.pdf)
 
