@@ -1,0 +1,7 @@
+Name	QTgw.1B.1	QFsn.1B.1	QTgw.1B.2	QDst.1D.1	QFsn.2A.1	QDst.2B.1	QTgw.2B.1	QFsn.2B.1	QDst.2D.1	QTgw.3A.1	QGpc.3A.1	QTgw.3A.2	QTgw.3B.1	QDst.3B.1	QTgw.3B.2	QDst.3D.1	QGpc.3D.1	QFsn.4A.1	QFsn.4A.2	QTgw.5A.1	QDst.5A.1	QTgw.5B.1	QDst.5D.1	QGpc.6A.1	QFsn.6A.1	QFsn.6B.1	QDst.6B.1	QDst.7A.1	QFsn.7A.1	QFsn.7B.1	QTgw.7D.1
+Nongda179	2	2	1	2	1	2	1	2	2	2	1	2	1	2	1	1	2	2	2	1	1	1	1	1	1	1	1	1	0	1	1
+Pingan6	2	2	1	2	1	2	1	2	2	1	1	1	1	2	1	2	1	1	1	1	1	1	1	1	1	2	1	1	1	1	1
+Longmai212	1	2	1	1	1	1	1	1	2	2	1	1	1	2	1	1	1	1	2	1	1	1	2	2	1	1	1	1	1	1	1
+Lankao926	1	2	1	2	1	1	1	2	1	2	2	1	1	1	1	1	2	1	1	1	1	2	1	2	1	1	1	1	1	1	1
+CHD5O3	1	2	2	2	1	1	2	1	1	1	1	1	1	2	1	1	2	2	2	2	2	1	1	1	1	1	2	1	2	2	1
+Heng5364	1	1	2	1	2	2	1	2	2	1	2	1	1	2	1	2	2	1	2	1	1	2	1	2	1	1	1	1	2	1	2
