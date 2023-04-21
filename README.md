@@ -1,4 +1,4 @@
-# Designed-Breeding-Simulation-too
+# Designed-Breeding-Simulation-tool
 **Designed Breeding Simulation (DBS) tool** is developed for the selection of potential parents and breeding strategies, estimation of breeding population size, and achieving the pyramiding of superior alleles.
 
 
