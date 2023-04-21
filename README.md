@@ -10,7 +10,7 @@ git clone https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool.git
 ```
 ## Example
 
-There are three example datasets attached in DBS tool, , users can export and view the details by following R code:
+There are four example datasets attached in DBS tool, , users can export and view the details by following R code:
 ```
 #The genotype of the materials at the instresting QTL and genes.
 > pop_file <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
