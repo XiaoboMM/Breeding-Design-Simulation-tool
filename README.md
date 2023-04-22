@@ -29,20 +29,18 @@ The character format of genotype data to numeric codes of 0, 1 and 2 representin
 
 ```
 ## The detailed information of QTL and genes
-> qtl_file <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
-> head(qtl_file)
-  Trait       QTL Chr    Pos
-1   FSN QFsn.1B.1  1B 667.97
-2   FSN QFsn.2A.1  2A 675.94
-3   FSN QFsn.2B.1  2B 439.23
-4   FSN QFsn.4A.1  4A 616.31
-5   FSN QFsn.4A.2  4A 726.22
-6   FSN QFsn.6A.1  6A 520.88
+> qtl <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
+> head(qtl)
+  Trait       QTL       Chromosome  Physical_position
+1   FSN    QFsn.1B.1         1B            667.97
+2   FSN    QFsn.2A.1         2A            675.94
+3   FSN    QFsn.2B.1         2B            439.23
+4   FSN    QFsn.4A.1         4A            616.31
+5   FSN    QFsn.4A.2         4A            726.22
+6   FSN    QFsn.6A.1         6A            520.88
 
 As the example dataset, the first four columns are names, related-traits, chromosomes, physical positions (Mb) of QTL and genes, respectively.
 ```
-
-
 
 
 
@@ -61,6 +59,24 @@ As the example dataset, the first four columns are names, related-traits, chromo
 
 As the example dataset, the three columns are chromosomes, physical positions (Mb) and genetic position (cM), respectively.
 ```
+
+
+```
+## The genetic position of QTL and genes
+qtl$Physical_position <- round(qtl$Physical_position)
+qtl_file <- merge(qtl, map, by = c("Chromosome", "Physical_position"), all.x = T)%>%
+  select(Trait, QTL, Chromosome, Genetic_position)
+> head(qtl_file)
+   Trait      QTL      Chromosome    Genetic_position
+1   DST    QDst.1B.1         1B             0.32
+2   TGW    QTgw.1B.1         1B            18.86
+3   GPC    QGpc.1B.1         1B            20.98
+4   FSN    QFsn.1B.1         1B            77.74
+5   TGW    QTgw.1B.2         1B            77.74
+6   FSN    QFsn.2A.1         2A            69.83
+
+```
+
 
 
 ```
