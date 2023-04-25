@@ -150,6 +150,6 @@ startDesign(P1, selected_pop, qtl_file, pop_file)
 |BC2F2enrichmentRIL|38|62|1060|553|∞
 
 The minimum population size required to obtain the desired genotypes of offspring individuals from “Nongda179” , and its five candidate hybrid parents under different breeding strategies (α = 0.01).
-#Note: "∞" represents the inability to obtain ideal genotype plant individuals the impossibility of obtaining individuals with the desired genotype.
+#Note: "∞" represents the inability to obtain ideal genotype plant individual.
 
 
