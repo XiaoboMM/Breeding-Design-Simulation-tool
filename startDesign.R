@@ -15,13 +15,12 @@ source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-
 source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/source/BC2F2enrichment.R", encoding = "utf-8")
 source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/source/BC2F2enrichmentDH.R", encoding = "utf-8")
 source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/source/BC2F2enrichmentRIL.R", encoding = "utf-8")
+library(dplyr)
+library(readr)
+library(tidyr)
+library(data.table)
 
 startDesign <- function(P1, selected_pop, qtl_file, pop_file){
-  library(dplyr)
-  library(readr)
-  library(tidyr)
-  library(data.table)
-  library(openxlsx)
   F1DH(P1, selected_pop, qtl_file, pop_file)
   F1RIL(P1, selected_pop, qtl_file, pop_file)
   BC1DH(P1, selected_pop, qtl_file, pop_file)
