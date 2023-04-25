@@ -132,22 +132,22 @@ startDesign(P1, selected_pop, qtl_file, pop_file)
 |Strategy|Pingan6|Longmai212|Lankao926|CHD5O3|Luzi238|
 |--|--|--|--|--|--|
 |F<sub>1</sub>DH|637|1029|222194|559814|∞|
-|F~1~RIL|593|1270|111314|217536|∞|
-|BC~1~DH|4992|25633|2713146|1730278|∞|
-|BC~1~RIL|5298|31616|1964644|1088109|∞|
-|BC~2~DH|66245|1053890|95848590|26279757|∞|
-|BC~2~RIL|73638|1299850|80066289|19812623|∞|
-|F~2~|88716|230714|10720802510|68052587701|∞|
-|BC~1~F~2~|4992|25633|2713146|1730278|∞|
-|F~2E~|4|11|10|3|51|
-|F~2E~DH|66|127|462|917|1601|
-|F~2E~RIL|66|131|460|882|1616|
-|BC~1~F~2~E|200|1912|2861|1903|10456|
-|BC~1~F~2E~DH|45|70|1972|1655|∞|
-|BC~1~F~2E~RIL|46|74|1650|1351|∞|
-|BC~2~F~2E~|6174|93269|338097|264419|676480|
-|BC~2~F~2E~DH|38|59|1218|650|∞|
-|BC~2~F~2E~RIL|38|62|1060|553|∞|
+|F<sub>1</sub>RIL|593|1270|111314|217536|∞|
+|BC<sub>1</sub>DH|4992|25633|2713146|1730278|∞|
+|BC<sub>1</sub>RIL|5298|31616|1964644|1088109|∞|
+|BC<sub>2</sub>DH|66245|1053890|95848590|26279757|∞|
+|BC<sub>2</sub>RIL|73638|1299850|80066289|19812623|∞|
+|F<sub>2</sub>|88716|230714|10720802510|68052587701|∞|
+|BC<sub>1</sub>F<sub>2</sub>|4992|25633|2713146|1730278|∞|
+|F<sub>2E</sub>|4|11|10|3|51|
+|<sub>2E~DH|66|127|462|917|1601|
+|F<sub>2E</sub>RIL|66|131|460|882|1616|
+|BC<sub>1</sub>F<sub>2E</sub>|200|1912|2861|1903|10456|
+|BC<sub>1</sub>F<sub>2E</sub>DH|45|70|1972|1655|∞|
+|BC<sub>1</sub>F<sub>2E</sub>RIL|46|74|1650|1351|∞|
+|BC<sub>2</sub>F<sub>2E</sub>|6174|93269|338097|264419|676480|
+|BC<sub>2</sub>F<sub>2E</sub>DH|38|59|1218|650|∞|
+|BC<sub>2</sub>F<sub>2E</sub>RIL|38|62|1060|553|∞|
 
 The minimum population size required to obtain the desired genotypes of offspring individuals from “Nongda179” , and its five candidate hybrid parents under different breeding strategies (α = 0.01).
 #Note: "∞" represents the inability to obtain ideal genotype plant individual.
