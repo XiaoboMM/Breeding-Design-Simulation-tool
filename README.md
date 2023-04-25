@@ -129,6 +129,9 @@ startDesign(P1, selected_pop, qtl_file, pop_file)
 
 #Note: File "selected_pop.txt" is the result file of the parentSelection step.
 
+```
+
+
 |Strategy|Pingan6|Longmai212|Lankao926|CHD5O3|Luzi238|
 |--|--|--|--|--|--|
 |F<sub>1</sub>DH|637|1029|222194|559814|∞|
@@ -151,5 +154,5 @@ startDesign(P1, selected_pop, qtl_file, pop_file)
 
 The minimum population size required to obtain the desired genotypes of offspring individuals from “Nongda179” , and its five candidate hybrid parents under different breeding strategies (α = 0.01).
 #Note: "∞" represents the inability to obtain ideal genotype plant individual.
-```
+
 
