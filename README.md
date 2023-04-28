@@ -7,14 +7,14 @@
 
 **BDS tool**  can be installed with the following R code:
 ```
-git clone https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool.git
+git clone https://github.com/XiaoboMM/Breeding-Design-Simulation-tool.git
 ```
 ## Example
 
 There are four example datasets attached in BDS tool, , users can export and view the details by following R code:
 ```
 #The genotype of the materials at the instresting QTL and genes.
-> genotype_pop <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
+> genotype_pop <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
 > genotype_pop[(1:5), c(1:5)]
   Trait     QTL       Jimai22 Jinan13 04zhong36
 1   DST   QDst.1B.1       1       2         2
@@ -29,7 +29,7 @@ The character format of genotype data to numeric codes of 0, 1 and 2 representin
 
 ```
 ## The detailed information of QTL and genes
-> qtl <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
+> qtl <- read.table("https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
 > head(qtl)
   Trait       QTL       Chromosome  Physical_position
 1   FSN    QFsn.1B.1         1B            667.97
@@ -47,7 +47,7 @@ As the example dataset, the first four columns are names, related-traits, chromo
 
 ```
 #The general linkage map
-> map <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/general_linkage_map.csv", header = T)
+> map <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/data/general_linkage_map.csv", header = T)
 > head(map)
   Chromosome Physical_position Genetic_position
 1         1A                 0             0.00
@@ -81,7 +81,7 @@ qtl_file <- merge(qtl, map, by = c("Chromosome", "Physical_position"), all.x = T
 
 ```
 #Target traits
-> trait_type <- read.table("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Trait_Type.txt", header = T, sep = "\t")
+> trait_type <- read.table("https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/data/Trait_Type.txt", header = T, sep = "\t")
 > head(trait_type)
   Trait Target
 1   FSN    Yes
@@ -97,7 +97,7 @@ qtl_file <- merge(qtl, map, by = c("Chromosome", "Physical_position"), all.x = T
 
 The parent to be improved needs to be provided. For example, P1 = "Nongda179"
 ```
-source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/parentSelection.R")
+source("https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/parentSelection.R")
 P1 = "Nongda179"
 percent_T1 = 0.1
 percent_T2 = 0.25
@@ -111,9 +111,9 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 #Note: BDS tool provides up to 6 desired trait.
 #percent_all: The retained potential parental lines in the bottom percentage (45%) for the number of different allele QTL compared to "Nongda179" in all the target traits.
 ```
-**[The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Figure1.jpg)**
+**[The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/data/Figure1.jpg)**
 <p align="center">
-<a href="https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Figure1.jpg">
+<a href="https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/data/Figure1.jpg">
 <img src="data/Figure1.jpg" height="200px" width="600px">
 </a>
 </p>
@@ -123,7 +123,7 @@ Blue, red and gray color represent superior, inferior and missing alleles, respe
 
 ## startDesign
 ```
-source("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/startDesign.R")
+source("https://raw.githubusercontent.com/XiaoboMM/Breeding-Design-Simulation-tool/master/startDesign.R")
 selected_pop <- read.table("selected_pop.txt", header = T, sep = "\t")
 startDesign(P1, selected_pop, qtl_file, pop_file)
 
