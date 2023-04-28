@@ -5,13 +5,13 @@
 
 ## Installation
 
-**DBS tool**  can be installed with the following R code:
+**BDS tool**  can be installed with the following R code:
 ```
 git clone https://github.com/XiaoboMM/Designed-Breeding-Simulation-tool.git
 ```
 ## Example
 
-There are four example datasets attached in DBS tool, , users can export and view the details by following R code:
+There are four example datasets attached in BDS tool, , users can export and view the details by following R code:
 ```
 #The genotype of the materials at the instresting QTL and genes.
 > genotype_pop <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/genotype_pop.csv", header = T, check.names = F)
@@ -108,7 +108,7 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 
 #percent_T1: Potential parental lines in the top percentage (10%) for the number of complementary superior allele QTL compared to "Nongda179" in the first desired trait for improvement (FSN in this example)；
 #percent_T2: The retained potential parental lines in the top percentage (25%) for the number of complementary superior allele QTL compared to "Nongda179" in the second desired trait for improvement (FSN in this example).
-#Note: DBS tool provides up to 6 desired trait.
+#Note: BDS tool provides up to 6 desired trait.
 #percent_all: The retained potential parental lines in the bottom percentage (45%) for the number of different allele QTL compared to "Nongda179" in all the target traits.
 ```
 **[The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Designed-Breeding-Simulation-tool/master/data/Figure1.jpg)**
