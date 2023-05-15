@@ -7,7 +7,7 @@
 
 **SCP tool**  can be installed with the following R code:
 ```
-git clone https://github.com/XiaoboMMSelect-Candidate-Parents-tool.git
+git clone https://github.com/XiaoboMM/Select-Candidate-Parents-tool.git
 ```
 ## Example
 
