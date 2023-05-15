@@ -1,6 +1,6 @@
 
 # Select-Candidate-Parents-tool
-**Select Candidate Parents (SCP) tool** is developed for the selection of candidate parents and breeding strategies, estimation of breeding population size, and achieving the pyramiding of superior alleles.
+**Select Candidate Parents (SCP) tool** is developed for the selection of candidate parents and breeding schemes, estimation of breeding population size, and achieving the pyramiding of superior alleles.
 
 
 ## Installation
@@ -132,7 +132,7 @@ startDesign(P1, selected_pop, qtl_file, pop_file)
 ```
 
 
-|Strategy|Pingan6|Longmai212|Lankao926|CHD5O3|Luzi238|
+|Scheme|Pingan6|Longmai212|Lankao926|CHD5O3|Luzi238|
 |--|--|--|--|--|--|
 |F<sub>1</sub>DH|637|1029|222194|559814|∞|
 |F<sub>1</sub>RIL|593|1270|111314|217536|∞|
