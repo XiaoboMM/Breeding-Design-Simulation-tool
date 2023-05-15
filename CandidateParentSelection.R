@@ -1,5 +1,5 @@
 
-parentSelection <- function(P1, genotype_pop, trait_type, percent_all, percent_T1, 
+CandidateParentSelection <- function(P1, genotype_pop, trait_type, percent_all, percent_T1, 
                             percent_T2 = 1, percent_T3 = 1, percent_T4 = 1, 
                             percent_T5 = 1, percent_T6 = 1){
   library(dplyr)
