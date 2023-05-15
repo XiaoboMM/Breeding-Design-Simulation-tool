@@ -93,11 +93,11 @@ qtl_file <- merge(qtl, map, by = c("Chromosome", "Physical_position"), all.x = T
 “No“ in the second column, corresponds to the trait to be maintained in the first column.
 ```
 
-## parentSelection
+## CandidateParentSelection
 
 The parent to be improved needs to be provided. For example, P1 = "Nongda179"
 ```
-source("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/parentSelection.R")
+source("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/CandidateParentSelection.R")
 P1 = "Nongda179"
 percent_T1 = 0.1
 percent_T2 = 0.25
@@ -121,9 +121,9 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 Blue, red and gray color represent superior, inferior and missing alleles, respectively.
 
 
-## startDesign
+## PopulationSizeEstimation
 ```
-source("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/startDesign.R")
+source("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/PopulationSizeEstimation.R")
 selected_pop <- read.table("selected_pop.txt", header = T, sep = "\t")
 startDesign(P1, selected_pop, qtl_file, pop_file)
 
