@@ -152,6 +152,6 @@ startDesign(P1, selected_pop, qtl_file, pop_file)
 |BC<sub>2</sub>F<sub>2E</sub>DH|38|59|1218|650|∞|
 |BC<sub>2</sub>F<sub>2E</sub>RIL|38|62|1060|553|∞|
 
-The minimum population size required to obtain the desired genotypes of offspring individuals from “Nongda179” and its five candidate hybrid parents under different breeding strategies (α = 0.01).  
+Least population size required to obtain at least one target genotype (α = 0.01) in various progeny populations when using “Nongda179” as one parental line.  
 #Note: <sub>E</sub> represents enrichment; ∞ represents the inability to obtain ideal genotype plant individual.
 
