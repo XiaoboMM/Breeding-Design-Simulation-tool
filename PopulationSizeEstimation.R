@@ -20,7 +20,7 @@ library(readr)
 library(tidyr)
 library(data.table)
 
-startDesign <- function(P1, selected_pop, qtl_file, pop_file){
+PopulationSizeEstimation <- function(P1, selected_pop, qtl_file, pop_file){
   F1DH(P1, selected_pop, qtl_file, pop_file)
   F1RIL(P1, selected_pop, qtl_file, pop_file)
   BC1DH(P1, selected_pop, qtl_file, pop_file)
