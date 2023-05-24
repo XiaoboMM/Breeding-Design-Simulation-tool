@@ -11,10 +11,10 @@ git clone https://github.com/XiaoboMM/Select-Candidate-Parents-tool.git
 ```
 ## Example
 
-There are four example datasets attached in SCP tool, , users can export and view the details by following R code:
+There are four example datasets attached in PST tool, , users can export and view the details by following R code:
 ```
 #The genotype of the materials at the instresting QTL and genes.
-> genotype_pop <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tooll/master/data/genotype_pop.csv", header = T, check.names = F)
+> genotype_pop <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/data/genotype_pop.csv", header = T, check.names = F)
 > genotype_pop[(1:5), c(1:5)]
   Trait     QTL       Jimai22 Jinan13 04zhong36
 1   DST   QDst.1B.1       1       2         2
@@ -29,7 +29,7 @@ The character format of genotype data to numeric codes of 0, 1 and 2 representin
 
 ```
 ## The detailed information of QTL and genes
-> qtl <- read.table("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
+> qtl <- read.table("https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/data/QTL.txt", sep = "\t", check.names = F, header = T)
 > head(qtl)
   Trait       QTL       Chromosome  Physical_position
 1   FSN    QFsn.1B.1         1B            667.97
@@ -47,7 +47,7 @@ As the example dataset, the first four columns are names, related-traits, chromo
 
 ```
 #The general linkage map
-> map <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/data/general_linkage_map.csv", header = T)
+> map <- read.csv("https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/data/general_linkage_map.csv", header = T)
 > head(map)
   Chromosome Physical_position Genetic_position
 1         1A                 0             0.00
@@ -81,7 +81,7 @@ qtl_file <- merge(qtl, map, by = c("Chromosome", "Physical_position"), all.x = T
 
 ```
 #Target traits
-> trait_type <- read.table("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/data/Trait_Type.txt", header = T, sep = "\t")
+> trait_type <- read.table("https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/data/Trait_Type.txt", header = T, sep = "\t")
 > head(trait_type)
   Trait Target
 1   FSN    Yes
@@ -97,7 +97,7 @@ qtl_file <- merge(qtl, map, by = c("Chromosome", "Physical_position"), all.x = T
 
 The parent to be improved needs to be provided. For example, P1 = "Nongda179"
 ```
-source("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/CandidateParentSelection.R")
+source("https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/CandidateParentSelection.R")
 P1 = "Nongda179"
 percent_T1 = 0.1
 percent_T2 = 0.25
@@ -111,9 +111,9 @@ parentSelection(P1 = P1, genotype_pop = genotype_pop, trait_type = trait_type,
 #Note: BDS tool provides up to 6 desired trait.
 #percent_all: The retained potential parental lines in the bottom percentage (45%) for the number of different allele QTL compared to "Nongda179" in all the target traits.
 ```
-**[The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/data/Figure1.jpg)**
+**[The distribution of allelic types of “Nongda179” and its five potential hybrid parents](https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/data/Figure1.jpg)**
 <p align="center">
-<a href="https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/data/Figure1.jpg">
+<a href="https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/data/Figure1.jpg">
 <img src="data/Figure1.jpg" height="200px" width="600px">
 </a>
 </p>
@@ -123,7 +123,7 @@ Blue, red and gray color represent superior, inferior and missing alleles, respe
 
 ## PopulationSizeEstimation
 ```
-source("https://raw.githubusercontent.com/XiaoboMM/Select-Candidate-Parents-tool/master/PopulationSizeEstimation.R")
+source("https://raw.githubusercontent.com/XiaoboMM/Parental-Selection-Tool/master/PopulationSizeEstimation.R")
 selected_pop <- read.table("selected_pop.txt", header = T, sep = "\t")
 startDesign(P1, selected_pop, qtl_file, pop_file)
 
