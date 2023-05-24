@@ -1,11 +1,11 @@
 
-# Select-Candidate-Parents-tool
-**Select Candidate Parents (SCP) tool** is developed for the selection of candidate parents and breeding schemes, estimation of breeding population size, and achieving the pyramiding of superior alleles.
+# Parental-Selection-Tool
+**Parental Selection Tool (PST)** is developed for the selection of candidate parents and breeding schemes, estimation of breeding population size, and achieving the pyramiding of superior alleles.
 
 
 ## Installation
 
-**SCP tool**  can be installed with the following R code:
+**PST**  can be installed with the following R code:
 ```
 git clone https://github.com/XiaoboMM/Select-Candidate-Parents-tool.git
 ```
